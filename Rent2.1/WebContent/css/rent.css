@@ -1,0 +1,21 @@
+/*style for register */
+.outer
+{
+margin-top:20px;
+width:695px;
+height: auto;
+float:left;
+background:url(../images/img.png) repeat;
+border-radius: 15px;
+}
+.outer .row
+{
+	width: auto;
+	padding: 5px;
+	font-size:16px;
+	font-family: Arial, Helvetica, sans-serif;	
+}
+.outer .row .indivisual 
+{
+	width: 50%;
+}
