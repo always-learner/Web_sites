@@ -8,14 +8,27 @@ float:left;
 background:url(../images/img.png) repeat;
 border-radius: 15px;
 }
+
 .outer .row
 {
 	width: auto;
 	padding: 5px;
-	font-size:16px;
+	font-size:14px;
 	font-family: Arial, Helvetica, sans-serif;	
 }
-.outer .row .indivisual 
+.outer .indivisual 
 {
-	width: 50%;
+	width: 30%;
+}
+.outer .indivisual input
+{
+	width: 80%;
+	border-radius:10px;
+	height: 100%
+}
+.outer .indivisual textarea
+{
+	width: 80%;
+	height: 100%;
+	margin-left: 22px;
 }
