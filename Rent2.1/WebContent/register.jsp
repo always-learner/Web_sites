@@ -6,16 +6,9 @@
 <link rel="stylesheet" type="text/css" href="css/Mainstyle.css" />
 <link rel="stylesheet" type="text/css" href="css/rent.css" />
 <script>
-<script>
 $(document).ready(function(){
-    $("#register_type").click(function(){
         $("#outer_house").hide();
     });
-    $("#show").click(function(){
-        $("p").show();
-    });
-});
-</script>
 </script>
 </head>
 <body onload="PageLoad()">
