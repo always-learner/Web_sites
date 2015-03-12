@@ -38,7 +38,7 @@ $(document).ready(function () {
     <!-- end of column one -->
      
     <div>
-    <form method="post" action="RegisterLandlord">
+    <form method="post" action="RegisterUser">
      <div class="column4">
     
       <div class="title">Personal Details</div>
@@ -105,11 +105,11 @@ $(document).ready(function () {
         <td class="indivisual"></td><td class="indivisual"></td><td class="indivisual"></td>
         </tr> 
         <tr>
-          <td class="indivisual"></td>
-          <td class="indivisual">
-          <input type="reset" name="reset" id="edit_reset" style="width: 40%"/> <input type="submit" name="submit" value="Register" id="edit_sub" style="width: 40%;margin-left: 10px;"/>
-          </td>
-          <td></td>
+        	<td class="indivisual"></td>
+        	<td class="indivisual">
+        	<input type="submit" name="submit" value="Sign Up" id="edit_sub" style="width: 40%;margin-left: 10px;"/>&nbsp;&nbsp;<input type="reset" name="reset" id="edit_reset" style="width: 40%"/> 
+        	</td>
+        	<td></td>
         </tr>
         </table>
       </div>

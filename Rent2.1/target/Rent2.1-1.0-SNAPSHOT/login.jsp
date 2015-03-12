@@ -9,72 +9,7 @@
 <body>
 <div id="main_container">
   <div id="header">
-    <div id="logo"> <a href="http://all-free-download.com/free-website-templates/"><img src="images/logo.gif" width="147" height="78" alt="" border="0" /></a> </div>
-    <div class="banner_adds"></div>
-    <div class="menu">
-      <ul>
-        <li><a href="http://all-free-download.com/free-website-templates/">Admin Home</a></li>
-        <li><a href="list.html">Manage Offers
-          <!--[if IE 7]><!-->
-          </a>
-          <!--<![endif]-->
-          <!--[if lte IE 6]><table><tr><td><![endif]-->
-          <ul>
-            <li><a href="http://all-free-download.com/free-website-templates/">Lorem ipsum dolor sit amet</a></li>
-            <li><a href="http://all-free-download.com/free-website-templates/">Lorem ipsum dolor sit amet</a></li>
-            <li><a href="http://all-free-download.com/free-website-templates/">Lorem ipsum dolor sit amet</a></li>
-            <li><a href="http://all-free-download.com/free-website-templates/">Lorem ipsum dolor sit amet</a></li>
-            <li><a href="http://all-free-download.com/free-website-templates/">Lorem ipsum dolor sit amet</a></li>
-            <li><a href="http://all-free-download.com/free-website-templates/">Lorem ipsum dolor sit amet</a></li>
-            <li><a href="http://all-free-download.com/free-website-templates/">Lorem ipsum dolor sit amet</a></li>
-            <li><a href="http://all-free-download.com/free-website-templates/">Lorem ipsum dolor sit amet</a></li>
-            <li><a href="http://all-free-download.com/free-website-templates/">Lorem ipsum dolor sit amet</a></li>
-            <li><a href="http://all-free-download.com/free-website-templates/">Lorem ipsum dolor sit amet</a></li>
-          </ul>
-          <!--[if lte IE 6]></td></tr></table></a><![endif]-->
-        </li>
-        <li><a href="login.html">Login
-          <!--[if IE 7]><!-->
-          </a>
-          <!--<![endif]-->
-          <!--[if lte IE 6]><table><tr><td><![endif]-->
-          <ul>
-            <li><a href="http://all-free-download.com/free-website-templates/">Categories</a></li>
-            <li><a href="http://all-free-download.com/free-website-templates/">Lorem ipsum dolor sit amet</a></li>
-            <li><a href="http://all-free-download.com/free-website-templates/">Lorem ipsum dolor sit amet</a></li>
-            <li><a href="http://all-free-download.com/free-website-templates/">Lorem ipsum dolor sit amet</a></li>
-            <li><a href="http://all-free-download.com/free-website-templates/">Lorem ipsum dolor sit amet</a></li>
-            <li><a href="http://all-free-download.com/free-website-templates/">Lorem ipsum dolor sit amet</a></li>
-            <li><a href="http://all-free-download.com/free-website-templates/">Lorem ipsum dolor sit amet</a></li>
-            <li><a href="http://all-free-download.com/free-website-templates/">Lorem ipsum dolor sit amet</a></li>
-            <li><a href="http://all-free-download.com/free-website-templates/">Lorem ipsum dolor sit amet</a></li>
-            <li><a href="http://all-free-download.com/free-website-templates/">Lorem ipsum dolor sit amet</a></li>
-          </ul>
-          <!--[if lte IE 6]></td></tr></table></a><![endif]-->
-        </li>
-        <li><a href="list.html">Newsletter
-          <!--[if IE 7]><!-->
-          </a>
-          <!--<![endif]-->
-          <!--[if lte IE 6]><table><tr><td><![endif]-->
-          <ul>
-            <li><a href="http://all-free-download.com/free-website-templates/">Lorem ipsum dolor sit amet</a></li>
-            <li><a href="http://all-free-download.com/free-website-templates/">Lorem ipsum dolor sit amet</a></li>
-            <li><a href="http://all-free-download.com/free-website-templates/">Lorem ipsum dolor sit amet</a></li>
-            <li><a href="http://all-free-download.com/free-website-templates/">Lorem ipsum dolor sit amet</a></li>
-            <li><a href="http://all-free-download.com/free-website-templates/">Lorem ipsum dolor sit amet</a></li>
-            <li><a href="http://all-free-download.com/free-website-templates/">Lorem ipsum dolor sit amet</a></li>
-            <li><a href="http://all-free-download.com/free-website-templates/">Lorem ipsum dolor sit amet</a></li>
-            <li><a href="http://all-free-download.com/free-website-templates/">Lorem ipsum dolor sit amet</a></li>
-            <li><a href="http://all-free-download.com/free-website-templates/">Lorem ipsum dolor sit amet</a></li>
-            <li><a href="http://all-free-download.com/free-website-templates/">Lorem ipsum dolor sit amet</a></li>
-          </ul>
-          <!--[if lte IE 6]></td></tr></table></a><![endif]-->
-        </li>
-        <li><a href="http://all-free-download.com/free-website-templates/">Manage Customers</a></li>
-        <li><a href="contact.html">Website</a></li>
-      </ul>
-    </div>
+    <%@include file="includes/Header.jsp" %>
   </div>
   <div id="main_content">
     <div class="admin_login">
@@ -91,8 +26,17 @@
               <label class="left">Password: </label>
               <input type="password" class="form_input"/>
             </div>
+            <div class="form_row">
+            <label class="left">User Role</label>
+            <select id="usr_type" style="width: 160px;margin-left: -10px">
+            	<option value="Admin">Admin</option>
+            	<option value="Landlord">Landlord</option>
+            	<option value="Tenant" selected="selected">Tenant</option>
+            </select>
+            </div>
             <div style="float:right; padding:10px 25px 0 0;">
-              <input type="image" src="images/login.gif"/>
+            	<label style="margin-right: 20px"><a href="register.jsp">New User! Sign up Now</a></label>
+                <input type="image" src="images/login.gif"/>
             </div>
           </div>
         </div>
