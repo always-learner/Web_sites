@@ -5,24 +5,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=windows-1252" />
 <link rel="stylesheet" type="text/css" href="css/Mainstyle.css" />
 <link rel="stylesheet" type="text/css" href="css/admin.css" />
-<script>
-function validate()
-{
-	
-	if((document.getElementById("usernm").value)=="")
-	{
-		alert("User Name should not empty");
-		return false;	
-	}
-	
-	if((document.getElementById("pass").value)=="")
-	{
-		alert("Password should not empty");
-		return false;	
-	}
-}
-
-</script>
 </head>
 <body>
 <div id="main_container">
@@ -34,17 +16,15 @@ function validate()
       <div class="left_box">
         <div class="top_left_box"> </div>
         <div class="center_left_box">
-          <div class="box_title"><span>Login</span> </div>
+          <div class="box_title"><span>Admin</span> login</div>
           <div class="form">
-          
-          <form  method="post" action="index" onsubmit="validate()">
             <div class="form_row">
               <label class="left">Username: </label>
-              <input type="text" class="form_input" id="usernm"/>
+              <input type="text" class="form_input"/>
             </div>
             <div class="form_row">
               <label class="left">Password: </label>
-              <input type="password" id="pass" class="form_input" />
+              <input type="password" class="form_input"/>
             </div>
             <div class="form_row">
             <label class="left">User Role</label>
@@ -55,17 +35,13 @@ function validate()
             </select>
             </div>
             <div style="float:right; padding:10px 25px 0 0;">
-            	<label style="margin-right: 20px"><a href="register.jsp">New User! Sign up Now</a></label>
-                <input type="image" src="images/login.gif" />
-                
+            	<label style="margin-right: 20px"><a href="Register">New User! Sign up Now</a></label>
+                <a href="DoLogin"><input type="image" src="images/login.gif"/></a>
             </div>
-        </form>         
           </div>
-    
         </div>
         <div class="bottom_left_box"> </div>
       </div>
-     
     </div>
   </div>
   <!-- end of main_content -->

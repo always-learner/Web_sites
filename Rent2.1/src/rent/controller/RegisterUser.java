@@ -10,6 +10,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.tomcat.util.buf.UEncoder;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+
+import rent.model.HibernateUtil;
+import rent.model.LandlordUser;
+import rent.model.TenantUser;
 
 public class RegisterUser extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -30,16 +38,42 @@ public class RegisterUser extends HttpServlet {
 		response.setContentType("text/html");
 		PrintWriter out=response.getWriter();
 		
+		
+		//Getting all the data from jsp page
+		String firstName=request.getParameter("firstname");
+		String lastName=request.getParameter("lastname");
+		String email=request.getParameter("mail_id");
+		String mono=request.getParameter("mobile");
+		String password=request.getParameter("passwd");
+		String address=request.getParameter("user_add");
 		//Verifying user type tenant or landlord
 		
 		String userType=request.getParameter("register_type");
 		if(userType.equals("tenant"))
 		{
-			System.out.println("user is tenant");
+			TenantUser tenantUser=new TenantUser(firstName,lastName,email,mono,password,address);
+			SessionFactory sf=HibernateUtil.getSessionFactory();
+			Session session=sf.openSession();
+    		Transaction transaction=session.beginTransaction();
+    		session.persist(tenantUser);
+    		transaction.commit();
+    		session.close();
+    		response.sendRedirect("LoginSuccess.jsp");
+			
 		}
 		else if(userType.equals("Landlord"))
 		{
-			System.out.println("user is Landlord");
+			String plan=request.getParameter("register_plan");
+			LandlordUser landlordUser=new LandlordUser(firstName,lastName,email,mono,password,address,plan);
+			SessionFactory sf=HibernateUtil.getSessionFactory();
+			Session session=sf.openSession();
+    		Transaction transaction=session.beginTransaction();
+    		session.persist(landlordUser);
+    		transaction.commit();
+    		session.close();
+    		response.sendRedirect("LoginSuccess.jsp");
+			
 		}
+		
 	}
 }

@@ -2,8 +2,8 @@
     <div class="banner_adds"></div>
     <div class="menu">
       <ul>
-        <li><a href="index.jsp">Home</a></li>
-        <li><a href="admin.jsp">Admin
+        <li><a href="Home">Home</a></li>
+        <li><a href="Admin">Admin
           <!--[if IE 7]><!-->
           </a>
           <!--<![endif]-->
@@ -14,7 +14,7 @@
           </ul>
           <!--[if lte IE 6]></td></tr></table></a><![endif]-->
         </li>
-        <li><a href="login.jsp">Login
+        <li><a href="Login">Login
           <!--[if IE 7]><!-->
           </a>
           <!--<![endif]-->
@@ -55,7 +55,7 @@
         <li><a href="http://all-free-download.com/free-website-templates/">About Us </a></li>
         <li><a href="http://all-free-download.com/free-website-templates/">Customers</a></li>
         <li><a href="http://all-free-download.com/free-website-templates/">FAQ</a></li>
-        <li><a href="Contects.jsp">Contact</a></li>
+        <li><a href="Contect">Contact</a></li>
       </ul>
     </div>
  

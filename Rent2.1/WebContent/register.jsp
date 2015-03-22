@@ -7,102 +7,20 @@
 <link rel="stylesheet" type="text/css" href="css/rent.css" />
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script>
-function validate()
-{
-	if((document.getElementById("frst_usr_name").value)=="")
-	{
-		alert("Name should not empty");
-		return false;	
-	}
-	
-	if((document.getElementById("lst_usr_name").value)=="")
-	{
-		alert("Last name should not empty");
-		return false;	
-	}
-//--------------------------------------------------------------------------------------	
-	var inputText=document.getElementById("usr_email").value;
-	var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-	if(!(inputText.match(mailformat)))
-	{
-		alert("You have entered an invalid email address!");
-		return false;
-	}
-	
-	if((document.getElementById("usr_email").value)=="")
-	{
-		alert("Email should not empty");
-		return false;	
-	}
-	//------------------------------------------------------------------------------
-	var mob=document.getElementById("usr_mobile").value;
-	
-	var phoneno = /^\d{10}$/;
-		if(!(mob.match(phoneno)))
-	{
-		 	alert("Not a valid Phone Number");
-		return false;
-	}
-	
-	if(mob.length!=10)
-	{
-		alert("Enter valid mobile number");
-		return false;	
-	}
-	
-	if((document.getElementById("usr_mobile").value)=="")
-	{
-		alert("Mobile Number should not empty");
-		return false;	
-	}
-	
-//-------------------------------------------------------------------------------------------	
-	var pass=document.getElementById("usr_passwd").value;
-	var co_pass=document.getElementById("cnf_usr_passwd").value;
-	
-	if(pass!=co_pass)
-		{
-			alert("Password does not match");
-			return false;
-		}
-	
-	
-	if((document.getElementById("usr_passwd").value)=="")
-	{
-		alert("Password should not empty");
-		return false;	
-	}
-	
-	
-	
-//----------------------------------------------------------------------------------	
-	if((document.getElementById("use_address").value)=="")
-	{
-		alert(" should not empty");
-		return false;	
-	}
-	
-	
-	
-}
-
 $(document).ready(function () {
 
     //call function
-    $("#outer_house").hide();
-    $("#house_detail").hide();
+    $("#member").hide();
     
     $( "#register_type").click(function() {
         var val=$("#register_type").val();
         if(val=="Landlord")
           {
-            $("#outer_house").show();
-            $("#house_detail").show();      
+            $("#member").show();      
           }
         if(val=="tenant")
           {
-            $("#outer_house").hide();
-            $("#house_detail").hide();
+            $("#member").hide();
           }
     });
 });
@@ -120,7 +38,7 @@ $(document).ready(function () {
     <!-- end of column one -->
      
     <div>
-    <form method="post" action="RegisterLandlord" onsubmit="return validate()">
+    <form method="post" action="RegisterUser">
      <div class="column4">
     
       <div class="title">Personal Details</div>
@@ -129,31 +47,38 @@ $(document).ready(function () {
         <table class="row">
         <tr>
           <td class="indivisual"><label> First name : </label></td>
-          <td class="indivisual"><input type="text" maxlength="30" name="frstname" id="frst_usr_name"/><sup style="color: red">*</sup></td>
+          <td class="indivisual"><input type="text" maxlength="30" name="firstname" id="frst_usr_name"/></td>
+          <td class="mandatory">*</td>
         </tr>
         <tr>
           <td class="indivisual"><label>Last name : </label></td>
-          <td class="indivisual"><input type="text" maxlength="30" name="lstname" id="lst_usr_name"/></td>
+          <td class="indivisual"><input type="text" maxlength="30" name="lastname" id="lst_usr_name"/></td>
+          <td class="mandatory"></td>
         </tr>
         <tr>
           <td class="indivisual"><label>Email id : </label></td>
-          <td class="indivisual"><input type="email" maxlength="40" name="mail_id" id="usr_email"/><sup style="color: red">*</sup></td>
+          <td class="indivisual"><input type="email" maxlength="40" name="mail_id" id="usr_email"/></td>
+          <td class="mandatory">*</td>
         </tr>
         <tr>
           <td class="indivisual"><label>Mobile no : </label></td>
-          <td class="indivisual"><input type="number" maxlength="12" name="mobile" id="usr_mobile"/></td>
+          <td class="indivisual"><input type="text" maxlength="12" name="mobile" id="usr_mobile"/></td>
+          <td class="mandatory">*</td>
         </tr>
         <tr>
           <td class="indivisual"><label>Password : </label></td>
           <td class="indivisual"><input type="password" maxlength="20" name="passwd" id="usr_passwd"/></td>
+          <td class="mandatory">*</td>
         </tr>
         <tr>
           <td class="indivisual"><label>Confirm password : </label></td>
-          <td class="indivisual"><input type="password" maxlength="20" name="passwd" id="cnf_usr_passwd"/></td>
+          <td class="indivisual"><input type="cnf_password" maxlength="20" name="c_passwd" id="cnf_usr_passwd"/></td>
+          <td class="mandatory">*</td>
         </tr>
     <tr>
           <td class="indivisual"><label>Current address : </label></td>
-          <td class="indivisual"><textarea rows="4" cols="15" name="use_add" id="use_address"></textarea> </td>
+          <td class="indivisual"><textarea rows="4" cols="15" name="user_add" id="use_address"></textarea> </td>
+          <td class="mandatory"></td>
         </tr>
         
         <tr>
@@ -164,52 +89,31 @@ $(document).ready(function () {
               <option value="Landlord">Landlord</option>
             </select>
           </td>
+          <td class="mandatory"></td>
         </tr>
-        
-        
-        
-        </table>
-      </div>
-     
-      </div>
-      
-      
-      
-      <div class="column4">
-      
-      
-    <div class="outer" id="outer_house">
-        <table class="row">
-               
-         
-        <tr>
+         <tr id="member">
           <td class="indivisual"><label>Membership  : </label></td>
           <td class="indivisual">
-            <select name="register_type" id="register_type" style="width: 100px;" onchange="typeSelect()">
+            <select name="register_plan" id="register_type" style="width: 100px;" onchange="typeSelect()">
               <option value="onemonth" selected="selected">One Month</option>
               <option value="twomonth">Two Month</option>
             </select>
           </td>
+          <td></td>
         </tr>
-        
-       
+        <tr>
+        <td class="indivisual"></td><td class="indivisual"></td><td class="indivisual"></td>
+        </tr> 
+        <tr>
+        	<td class="indivisual"></td>
+        	<td class="indivisual">
+        	<input type="submit" name="submit" value="Sign Up" id="edit_sub" style="width: 40%;margin-left: 10px;"/>&nbsp;&nbsp;<input type="reset" name="reset" id="edit_reset" style="width: 40%"/> 
+        	</td>
+        	<td></td>
+        </tr>
         </table>
       </div>
-      </div>
-      <div class="column3" style="float: right;">
-        <input type="submit" name="submit" id="edit_sub"/><input type="reset" name="reset" id="edit_reset"/>
-      </div>
-      
-      
-      
-      
-      
-      
-      
-      
-      
-    
-    
+    </div>    
     </form>
 </div>
         <!-- end of column four -->
