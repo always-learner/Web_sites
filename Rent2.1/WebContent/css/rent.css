@@ -22,13 +22,21 @@ border-radius: 15px;
 }
 .outer .indivisual input
 {
-	width: 80%;
-	border-radius:10px;
+	width: 100%;
+
 	height: 100%
 }
+
 .outer .indivisual textarea
 {
-	width: 80%;
+	width: 100%;
 	height: 100%;
-	margin-left: 22px;
+	margin-left: 0px;
+}
+.outer .mandatory
+{
+	width: 20%;
+	height: 100%;
+	text-align: left;
+	color: red;
 }
