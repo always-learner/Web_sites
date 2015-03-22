@@ -36,7 +36,7 @@
             </div>
             <div style="float:right; padding:10px 25px 0 0;">
             	<label style="margin-right: 20px"><a href="Register">New User! Sign up Now</a></label>
-                <input type="image" src="images/login.gif"/>
+                <a href="DoLogin"><input type="image" src="images/login.gif"/></a>
             </div>
           </div>
         </div>

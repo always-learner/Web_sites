@@ -47,12 +47,12 @@ $(document).ready(function () {
         <table class="row">
         <tr>
           <td class="indivisual"><label> First name : </label></td>
-          <td class="indivisual"><input type="text" maxlength="30" name="frstname" id="frst_usr_name"/></td>
+          <td class="indivisual"><input type="text" maxlength="30" name="firstname" id="frst_usr_name"/></td>
           <td class="mandatory">*</td>
         </tr>
         <tr>
           <td class="indivisual"><label>Last name : </label></td>
-          <td class="indivisual"><input type="text" maxlength="30" name="lstname" id="lst_usr_name"/></td>
+          <td class="indivisual"><input type="text" maxlength="30" name="lastname" id="lst_usr_name"/></td>
           <td class="mandatory"></td>
         </tr>
         <tr>
@@ -72,12 +72,12 @@ $(document).ready(function () {
         </tr>
         <tr>
           <td class="indivisual"><label>Confirm password : </label></td>
-          <td class="indivisual"><input type="cnf_password" maxlength="20" name="passwd" id="cnf_usr_passwd"/></td>
+          <td class="indivisual"><input type="cnf_password" maxlength="20" name="c_passwd" id="cnf_usr_passwd"/></td>
           <td class="mandatory">*</td>
         </tr>
     <tr>
           <td class="indivisual"><label>Current address : </label></td>
-          <td class="indivisual"><textarea rows="4" cols="15" name="use_add" id="use_address"></textarea> </td>
+          <td class="indivisual"><textarea rows="4" cols="15" name="user_add" id="use_address"></textarea> </td>
           <td class="mandatory"></td>
         </tr>
         
@@ -94,7 +94,7 @@ $(document).ready(function () {
          <tr id="member">
           <td class="indivisual"><label>Membership  : </label></td>
           <td class="indivisual">
-            <select name="register_type" id="register_type" style="width: 100px;" onchange="typeSelect()">
+            <select name="register_plan" id="register_type" style="width: 100px;" onchange="typeSelect()">
               <option value="onemonth" selected="selected">One Month</option>
               <option value="twomonth">Two Month</option>
             </select>
