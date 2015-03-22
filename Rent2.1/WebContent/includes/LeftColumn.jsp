@@ -65,11 +65,11 @@
           <div class="form">
             <div class="form_row"> <img src="images/contact_envelope.gif" width="50" height="47" border="0" class="img_right" alt="" />
               <div class="contact_information"> Email: info@comapnyname.com<br />
-                Telephone: 0234 789 90<br />
-                Mobile: 234 345 234534<br />
+                Telephone: 2027670042<br />
+                Mobile: 7385580502<br />
                 Fax: 34534 3456 3456(54)<br />
                 <br />
-                <span>www.companyname.com</span> </div>
+                <span>www.GetOnRent.com</span> </div>
             </div>
           </div>
         </div>
