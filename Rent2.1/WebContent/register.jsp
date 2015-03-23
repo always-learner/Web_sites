@@ -7,6 +7,88 @@
 <link rel="stylesheet" type="text/css" href="css/rent.css" />
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script>
+//----------------------------------------------------------------------------
+function validate()
+{
+	if((document.getElementById("frst_usr_name").value)=="")
+	{
+		alert("Name should not empty");
+		return false;	
+	}
+	
+	if((document.getElementById("lst_usr_name").value)=="")
+	{
+		alert("Last name should not empty");
+		return false;	
+	}
+//--------------------------------------------------------------------------------------	
+	var inputText=document.getElementById("usr_email").value;
+	var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+	if(!(inputText.match(mailformat)))
+	{
+		alert("You have entered an invalid email address!");
+		return false;
+	}
+	
+	if((document.getElementById("usr_email").value)=="")
+	{
+		alert("Email should not empty");
+		return false;	
+	}
+	//------------------------------------------------------------------------------
+	var mob=document.getElementById("usr_mobile").value;
+	
+	var phoneno = /^\d{10}$/;
+		if(!(mob.match(phoneno)))
+	{
+		 	alert("Not a valid Phone Number");
+		return false;
+	}
+	
+	if(mob.length!=10)
+	{
+		alert("Enter valid mobile number");
+		return false;	
+	}
+	
+	if((document.getElementById("usr_mobile").value)=="")
+	{
+		alert("Mobile Number should not empty");
+		return false;	
+	}
+	
+//-------------------------------------------------------------------------------------------	
+	var pass=document.getElementById("usr_passwd").value;
+	var co_pass=document.getElementById("cnf_usr_passwd").value;
+	
+	if(pass!=co_pass)
+		{
+			alert("Password does not match");
+			return false;
+		}
+	
+	
+	if((document.getElementById("usr_passwd").value)=="")
+	{
+		alert("Password should not empty");
+		return false;	
+	}
+	
+	
+	
+//----------------------------------------------------------------------------------	
+	if((document.getElementById("use_address").value)=="")
+	{
+		alert(" should not empty");
+		return false;	
+	}
+	
+	
+	
+}
+
+
+//-----------------------------------------------------------------------------
 $(document).ready(function () {
 
     //call function
@@ -38,7 +120,7 @@ $(document).ready(function () {
     <!-- end of column one -->
      
     <div>
-    <form method="post" action="RegisterUser">
+    <form method="post" action="RegisterUser" onsubmit="validate()">
      <div class="column4">
     
       <div class="title">Personal Details</div>
